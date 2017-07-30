@@ -1,2 +1,2 @@
 # rest-client
-Rest client for RESTful API
+REST client for RESTful API
