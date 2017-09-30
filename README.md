@@ -22,3 +22,9 @@ E-mail: wisdomtool@outlook.com
 ![image](https://github.com/wisdomtool/rest-client/blob/master/Image_4.png)
 
 ![image](https://github.com/wisdomtool/rest-client/blob/master/Image_5.png)
+
+![image](https://github.com/wisdomtool/rest-client/blob/master/Image_6.png)
+
+![image](https://github.com/wisdomtool/rest-client/blob/master/Image_7.png)
+
+![image](https://github.com/wisdomtool/rest-client/blob/master/Image_8.png)
