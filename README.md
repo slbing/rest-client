@@ -5,6 +5,8 @@ http://www.wisdomtool.org
 
 https://github.com/wisdomtool/rest-client  
 
+Wisdom Tool REST client supports automated testing and automatically generating RESTful API document. 
+
 Please contact by e-mail for any insightful feedbacks, feature requests and bugs.  
 
 Author: Yu Dong Wang (Dom Wang)  
