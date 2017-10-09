@@ -5,7 +5,7 @@ http://www.wisdomtool.org
 
 https://github.com/wisdomtool/rest-client  
 
-This tool supports automated testing and automatically generating RESTful API document. 
+This tool supports automated testing and automatically generating RESTful API documentation. 
 
 Please contact by e-mail for any insightful feedbacks, feature requests and bugs.  
 
