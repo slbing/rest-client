@@ -1,17 +1,17 @@
 # rest-client
 Wisdom Tool REST client is developed by Wisdom Tool Foundation.  
 
-* http://www.wisdomtool.org *
+_http://www.wisdomtool.org_
 
-* https://github.com/wisdomtool/rest-client *  
+_https://github.com/wisdomtool/rest-client_  
 
 This tool supports automated testing and automatically generating RESTful API documentation. 
 
 Please contact by e-mail for any insightful feedbacks, feature requests and bugs.  
 
-* Author: Yu Dong Wang (Dom Wang) *  
+_Author: Yu Dong Wang (Dom Wang)_ 
 
-* E-mail: wisdomtool@outlook.com *
+_E-mail: wisdomtool@outlook.com_
 
 ---------------------------------------------------------------------------------------------------------------------
 
