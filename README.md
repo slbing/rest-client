@@ -15,11 +15,11 @@ E-mail: wisdomtool@outlook.com
 
 ---------------------------------------------------------------------------------------------------------------------
 
-1. Download JAR: restclient-1.1.jar;
+####1. Download JAR: *restclient-1.1.jar*;
 
-2. Install Java 1.7 or higher version on Windows platform;
+####2. Install Java 1.7 or higher version on Windows platform;
 
-3. Double click 'restclient-1.1.jar' to launch GUI.
+####3. Double click *restclient-1.1.jar* to launch GUI.
 
 ![image](https://github.com/wisdomtool/rest-client/blob/master/images/Image_1.png)
 
