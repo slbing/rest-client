@@ -37,4 +37,4 @@ _E-mail: wisdomtool@outlook.com_
 
 ![image](https://github.com/wisdomtool/rest-client/blob/master/images/Image_8.png)
 
-[Source code（源代码）](http://download.csdn.net/download/qq_40940516/10104872)
+[Source code（源代码）](https://github.com/wisdomtool/rest-client/blob/master/WisdomTool-RESTClient-V1.1.zip)
