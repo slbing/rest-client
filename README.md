@@ -1,8 +1,6 @@
 # rest-client
 Wisdom Tool REST client is developed by Wisdom Tool Foundation.  
 
-_https://github.com/wisdomtool/rest-client_  
-
 This tool supports automated testing and automatically generating RESTful API documentation. 
 
 Please contact by e-mail for any insightful feedbacks, feature requests and bugs.  
