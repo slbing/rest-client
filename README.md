@@ -5,17 +5,17 @@ This tool supports automated testing and automatically generating RESTful API do
 
 Please contact by e-mail for any insightful feedbacks, feature requests and bugs.  
 
-_Author: Dom Wang_ 
+_**Author**: Dom Wang_ 
 
-_E-mail: witpool@outlook.com_
+_**E-mail**: witpool@outlook.com_
 
 ---------------------------------------------------------------------------------------------------------------------
 
-#### 1. Download JAR: *restclient-1.1.jar*;
+#### 1. Download JAR: *`restclient-1.1.jar`*;
 
-#### 2. Install Java 1.7 or higher version on Windows platform;
+#### 2. Install `Java 1.7` or higher version on Windows platform;
 
-#### 3. Double click *restclient-1.1.jar* to launch GUI.
+#### 3. Double click *`restclient-1.1.jar`* to launch GUI.
 
 ![image](https://github.com/wisdomtool/rest-client/blob/master/images/Image_1.png)
 
