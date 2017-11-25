@@ -1,5 +1,5 @@
 # rest-client
-WisdomTool REST Client is developed by individual.  
+**WisdomTool REST Client** is developed by individual.  
 
 This tool supports automated testing RESTful API, produced beautiful report, and automatically generating RESTful API documentation based on history cases. 
 
