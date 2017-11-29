@@ -17,7 +17,7 @@ _**E-mail**: witpool@outlook.com_
 
 ---------------------------------------------------------------------------------------------------------------------
 
-#### 1. Download JAR: [*`restclient-1.1.jar`*]](https://github.com/wisdomtool/rest-client/blob/master/restclient-1.1.jar);
+#### 1. Download JAR: [*`restclient-1.1.jar`*](https://github.com/wisdomtool/rest-client/blob/master/restclient-1.1.jar);
    下载JAR包[`restclient-1.1.jar`](https://github.com/wisdomtool/rest-client/blob/master/restclient-1.1.jar)；
 
 #### 2. Install `Java 1.7` or higher version on Windows platform;
