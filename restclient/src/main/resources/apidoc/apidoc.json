@@ -7,12 +7,12 @@
         {
             "api_summary": {
                 "title": "rest-client/restclient",
-                "method": "",
+                "method": "rest-client",
                 "path": "rest-client/restclient"
             },
             "api_request": {
-                "header": "",
-                "model": "",
+                "header": "rest-client",
+                "model": "rest-client",
                 "example": "rest-client/restclient"
             },
             "api_response": [
