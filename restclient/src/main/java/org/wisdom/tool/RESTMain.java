@@ -1,10 +1,10 @@
 /* 
- * Copyright 2016-2017 WisdomTool.org. All Rights Reserved.
+ * Copyright 2016-2017 WisdomTool.org restclient/rest-client. All Rights Reserved.
  * 
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
    
- *  http://www.wisdomtool.org/licenses
+ *  http://www.wisdomtool.org/restclient/rest-client/licenses
  * 
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
@@ -31,7 +31,7 @@ import org.wisdom.tool.model.HttpHists;
 import org.wisdom.tool.util.RESTUtil;
 
 /** 
- * @ClassName: RESTMain 
+ * @ClassName: RESTMain for restclient/rest-client
  * @Description: Rest Main
  * @Author: Dom Wang
  * @Email: witpool@outlook.com 
