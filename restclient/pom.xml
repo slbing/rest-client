@@ -7,8 +7,8 @@
     <url>http://www.wisdomtool.org/restclient/rest-client</url>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <rest-client.version>1.1</rest-client.version>
-        <restclient.version>1.1</restclient.version>
+        <rest-client>1.1</rest-client>
+        <restclient>1.1</restclient>
         <java.version>1.7</java.version>
     </properties>
     <dependencies>
