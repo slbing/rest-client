@@ -1,10 +1,10 @@
 /* 
- * Copyright 2016-2017 WisdomTool.org restclient/rest-client. All Rights Reserved.
+ * Copyright 2016-2017 WisdomTool.org rest-client. All Rights Reserved.
  * 
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
    
- *  http://www.wisdomtool.org/restclient/rest-client/licenses
+ *  http://www.wisdomtool.org/rest-client/licenses
  * 
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
@@ -14,7 +14,7 @@
 package org.wisdom.tool.constant;
 
 /** 
-* @ClassName: RESTConst for restclient/rest-client
+* @ClassName: RESTConst for rest-client
 * @Description: Rest constants 
 * @Author: Dom Wang
 * @Email: witpool@outlook.com 
