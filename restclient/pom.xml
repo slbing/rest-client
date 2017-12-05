@@ -1,14 +1,13 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.wisdom.tool.restclient/rest-client</groupId>
-    <artifactId>restclient/rest-client</artifactId>
+    <groupId>org.wisdom.tool rest-client</groupId>
+    <artifactId>rest-client</artifactId>
     <version>1.1</version>
-    <description>This is one of wisdom tool with name restclient/rest-client</description>
-    <url>http://www.wisdomtool.org/restclient/rest-client</url>
+    <description>This is one of wisdom tool with name rest-client</description>
+    <url>http://www.wisdomtool.org/rest-client</url>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <rest-client>1.1</rest-client>
-        <restclient>1.1</restclient>
         <java.version>1.7</java.version>
     </properties>
     <dependencies>
