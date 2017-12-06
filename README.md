@@ -49,6 +49,13 @@ If the **WisdomTool REST Client** helps you a lot, and you would like to support
 
 ![Donate by pay](https://github.com/wisdomtool/rest-client/blob/master/images/donate_pay.png)
 
+Thank you very much for the **♥ donors ♥** <br/>
+
+Donation History |   Name   | Amount | Comment
+-----------------|----------|--------|------------------------------------------------------
+4 December 2017  |Lulu Chen |¥ 30    |Thank you for this useful tool ! Keep it up. Cheers :)
+
+
 # Support
 [Toolkit download     (工具包下载)](https://github.com/wisdomtool/rest-client/blob/master/restclient-1.1.jar)<br/><br/>
 [Source code download (源代码下载)](https://github.com/wisdomtool/rest-client/blob/master/WisdomTool-RESTClient-V1.1.zip)<br/><br/>
