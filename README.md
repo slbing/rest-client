@@ -57,8 +57,8 @@ Donation History |   Name   | Amount | Comment
 
 
 # Support
-[Toolkit download     (工具包下载)](https://github.com/wisdomtool/rest-client/blob/master/restclient-1.1.jar)<br/><br/>
+[Toolkit download (工具包下载)](https://github.com/wisdomtool/rest-client/blob/master/restclient-1.1.jar)<br/><br/>
 [Source code download (源代码下载)](https://github.com/wisdomtool/rest-client/blob/master/WisdomTool-RESTClient-V1.1.zip)<br/><br/>
-[Help contents        (帮助文档)](https://github.com/wisdomtool/rest-client/blob/master/doc/rest-client.pdf)<br/><br/>
+[Help contents (帮助文档)](https://github.com/wisdomtool/rest-client/blob/master/doc/rest-client.pdf)<br/><br/>
 [Technical exchange group (技术交流QQ群)](https://github.com/wisdomtool/rest-client/blob/master/images/qq-group.png)<br/>
 ![Technical Exchange Group (技术交流QQ群)](https://github.com/wisdomtool/rest-client/blob/master/images/qq-group.png)
