@@ -56,8 +56,10 @@ Thank you very much for the **♥ donors ♥** <br/>
 
 Donation History |   Name   | Amount | Comment
 -----------------|----------|--------|------------------------------------------------------
-4 December 2017  |Lulu Chen |¥ 30    |Thank you for this useful tool ! Keep it up. Cheers :)
-11 December 2017  |吴宇 |¥ 18    |不错的小工具，支持一下!
+03 January  2018  |宋俊明 |¥ 20    |非常好的小工具，坚持，越做越好！
+11 December 2017  |吴宇 |¥ 18    |不错的小工具，支持一下!
+04 December 2017  |Lulu Chen |¥ 30    |Thank you for this useful tool ! Keep it up. Cheers :)
+
 
 
 # Support
