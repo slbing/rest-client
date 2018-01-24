@@ -1,19 +1,19 @@
 # About rest-client
 **WisdomTool REST Client** is developed by individual.  
 
-This tool supports automated testing RESTful API, produced exquisite report, and automatically generating exquisite RESTful API documentation based on historical cases. 
+This tool supports testing REST API, produced exquisite report, and generating exquisite REST API documentation based on historical cases. 
 If this tool helps you a lot, please **bestow a ★star★**. Thanks!
 
-**WisdomTool REST Client** 是由个人所开发的一款自动化测试RESTful API的工具。
+**WisdomTool REST Client** 是由个人所开发的一款自动化测试REST API的工具。
 
-它可以自动化测试RESTful API并生成精美的测试报告，同时基于测试过的历史数据，可以自动生成精美的RESTful API文档。
+它可以测试REST API并生成精美的测试报告，同时基于测试过的历史数据，可以生成精美的REST API文档。
 如果您认为工具很有帮助，请您**恩赐一颗 ★星★**，谢谢！
 
 Please contact by e-mail for any insightful feedbacks, feature requests and bugs.  
 
-_**Author**: Dom Wang_ 
+_**Author**: Yudong (Dom) Wang_ 
 
-_**E-mail**: witpool@outlook.com_
+_**E-mail**: wisdomtool@outlook.com_
 
 
 # Steps
@@ -65,7 +65,7 @@ Donation History |   Name   | Amount | Comment
 
 # Support
 [Toolkit download (工具包下载)](https://github.com/wisdomtool/rest-client/blob/master/restclient-1.1.jar)<br/><br/>
-[Source code download (源代码下载)](https://github.com/wisdomtool/rest-client/blob/master/WisdomTool-RESTClient-V1.1.zip)<br/><br/>
+[Source code download (源代码下载)](https://github.com/wisdomtool/rest-client/blob/master/restclient)<br/><br/>
 [Help contents (帮助文档)](https://github.com/wisdomtool/rest-client/blob/master/doc/rest-client.pdf)<br/><br/>
 [Technical exchange group (技术交流QQ群)](https://github.com/wisdomtool/rest-client/blob/master/images/qq-group.png)<br/>
 ![Technical Exchange Group (技术交流QQ群)](https://github.com/wisdomtool/rest-client/blob/master/images/qq-group.png)
