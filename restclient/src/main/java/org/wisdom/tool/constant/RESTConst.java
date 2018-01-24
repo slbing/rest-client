@@ -1,25 +1,27 @@
-/* 
- * Copyright 2016-2017 WisdomTool.org rest-client. All Rights Reserved.
- * 
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
-   
- *  http://www.wisdomtool.org/rest-client/licenses
- * 
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+/*
+ * Copyright 2017-present, Yudong (Dom) Wang
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
 package org.wisdom.tool.constant;
 
 /** 
-* @ClassName: RESTConst for rest-client
+* @ClassName: RESTConst 
 * @Description: Rest constants 
-* @Author: Dom Wang
-* @Email: witpool@outlook.com 
+* @Author: Yudong (Dom) Wang
+* @Email: wisdomtool@outlook.com 
 * @Date: 2017-07-22 PM 10:42:57 
-* @Version: 1.0 
+* @Version: WisdomTool RESTClient V1.1 
 */
 public class RESTConst
 {
@@ -61,7 +63,7 @@ public class RESTConst
 
     public static final String LOGO = WISDOM_TOOL + "image/logo.png";
 
-    public static final String DONATE_ICON = WISDOM_TOOL + "image/donate_alipay.png";
+    public static final String DONATE_ICON = WISDOM_TOOL + "image/donate_pay.png";
 
     public static final String HELP_DOC = WISDOM_TOOL + "doc/rest-client.pdf";
 
@@ -225,6 +227,8 @@ public class RESTConst
 
     public static final String ACCEPT = "Accept";
 
+    public static final String ACCEPT_TYPE = "application/json,application/xml,application/xhtml+xml,text/html,text/xml,text/plain";
+    
     public final static String HTTP_HIST_JSON = "work/http_history.json";
 
     public static final String CONFIRM_RM_ALL = "Are you sure you want to remove all?";
@@ -289,7 +293,7 @@ public class RESTConst
 
     public static final String DONATE = "♥ Donate";
 
-    public static final String DONATE_BY_ALIPAY = "Donate by Alipay";
+    public static final String DONATE_BY_PAY = "Donate by Alipay or WeChat Pay";
 
     public static final String HTTP_HEAD = "http://";
 

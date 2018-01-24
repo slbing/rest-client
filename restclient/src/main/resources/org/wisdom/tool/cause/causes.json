@@ -1,30 +1,30 @@
 {
     "messages": {
-        "rest-client 10000": {
+        "10000": {
             "message_Zh_CN": "用例执行成功。",
             "message_En_US": "Run case successfully."
         },
-        "rest-client 10001": {
+        "10001": {
             "message_Zh_CN": "没有可执行的用例。",
             "message_En_US": "There is no case."
         },
-        "rest-client 10002": {
+        "10002": {
             "message_Zh_CN": "非法的用例，HTTP Request 或者 HTTP Response 是空的。",
             "message_En_US": "Bad case, HTTP Request or HTTP Response is null."
         },
-        "rest-client 10003": {
+        "10003": {
             "message_Zh_CN": "执行用例返回的状态码 <1> 与之前结果的状态码 <2> 不一致。",
             "message_En_US": "The response status <1> is inconsistent with the previous status <2>."
         },
-        "rest-client 10004": {
+        "10004": {
             "message_Zh_CN": "执行用例返回的消息体与之前结果的消息体不一致，请将日志里的返回消息体与历史用例的消息体进行对比。",
             "message_En_US": "Response body is inconsistent with the previous one. Please compare the response body in log file with the history case."
         },
-        "rest-client 10005": {
+        "10005": {
             "message_Zh_CN": "执行HTTP请求失败，请将日志里的返回消息内容与历史用例的消息内容进行对比。",
             "message_En_US": "Failed to execute HTTP request. Please compare the response message in log file with the history case."
         },
-        "rest-client 10006": {
+        "10006": {
             "message_Zh_CN": "错误的JSON文本。",
             "message_En_US": "Bad json text."
         }
