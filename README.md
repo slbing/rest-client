@@ -42,12 +42,6 @@ _**E-mail**: wisdomtool@outlook.com_
 
 ![image](https://github.com/wisdomtool/rest-client/blob/master/images/Image_8.png)
 
-Customize your own API documentation, please refer to the [**FAQ**](https://github.com/wisdomtool/rest-client/wiki/FAQ).<br/>
-定制满足您个性化需求的API文档，请参考[**FAQ**](https://github.com/wisdomtool/rest-client/wiki/FAQ)。<br/>
-
-Get the testing report and API documentation for Linux or Mac, please refer to the [**FAQ**](https://github.com/wisdomtool/rest-client/wiki/FAQ).<br/>
-在Linux或者Mac上获取测试报告和API文档，请参考[**FAQ**](https://github.com/wisdomtool/rest-client/wiki/FAQ)。<br/>
-
 # Donations
 如果 **WisdomTool REST Client** 工具对您帮助很大，并且您很愿意支持工具的后续开发和维护，您可以扫下方二维码随意打赏，就当是请我喝杯茶或是咖啡，将不胜感激。 **♥ 谢谢 ♥**
 
@@ -63,8 +57,6 @@ Donation History |   Name   | Amount | Comment
 03 January  2018  |宋俊明 |¥ 20    |非常好的小工具，坚持，越做越好！
 11 December 2017  |吴宇 |¥ 18    |不错的小工具，支持一下!
 04 December 2017  |Lulu Chen |¥ 30    |Thank you for this useful tool ! Keep it up. Cheers :)
-
-
 
 # Support
 [Toolkit download (工具包下载)](https://github.com/wisdomtool/rest-client/blob/master/restclient-1.1.jar)<br/><br/>
