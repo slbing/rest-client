@@ -73,6 +73,6 @@ Donation History |   Name   | Amount | Comment
 [Technical exchange group (技术交流QQ群)](https://github.com/wisdomtool/rest-client/blob/master/images/qq-group.png)<br/>
 ![Technical Exchange Group (技术交流QQ群)](https://github.com/wisdomtool/rest-client/blob/master/images/qq-group.png)
 
-# FAQ
-Please refer to [**the wiki**](https://github.com/wisdomtool/rest-client/wiki/FAQ).
+# [FAQ](https://github.com/wisdomtool/rest-client/wiki/FAQ)
+Please refer to [**the wiki**](https://github.com/wisdomtool/rest-client/wiki/FAQ).<br/>
 请参考[**wiki**](https://github.com/wisdomtool/rest-client/wiki/FAQ)。
