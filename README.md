@@ -1,7 +1,7 @@
 # About rest-client
 **WisdomTool REST Client** is developed by individual.  
 
-This tool supports automated testing REST API, produced exquisite report, and generating exquisite REST API documentation based on historical cases. 
+This tool supports automated testing REST API, producing exquisite report, and generating exquisite REST API documentation based on historical cases. 
 If this tool helps you a lot, please **bestow a ★star★**. Thanks!
 
 **WisdomTool REST Client** 是由个人所开发的一款自动化测试REST API的工具。
