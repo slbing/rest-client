@@ -96,13 +96,15 @@ public class MenuBarView implements ActionListener, PropertyChangeListener
         @Override
         public Void doInBackground()
         {
+            int done = 0;
             int progress = 0;
             this.setProgress(0);
             while (progress < hists.getTotal() && !isCancelled())
             {
                 progress = hists.progress();
+                done = Math.min(progress, hists.getTotal()) * 100 / hists.getTotal();
+                this.setProgress(done);
                 RESTUtil.sleep(RESTConst.TIME_100MS);
-                this.setProgress(Math.min(progress, hists.getTotal()));
             }
             return null;
         }
