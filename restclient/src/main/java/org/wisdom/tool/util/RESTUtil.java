@@ -30,7 +30,10 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.TreeMap;
 
+import org.apache.commons.codec.Charsets;
+import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.collections.MapUtils;
+import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang.StringUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -45,7 +48,6 @@ import org.wisdom.tool.cache.RESTCache;
 import org.wisdom.tool.constant.RESTConst;
 import org.wisdom.tool.model.Cause;
 import org.wisdom.tool.model.Causes;
-import org.wisdom.tool.model.Charsets;
 import org.wisdom.tool.model.ErrCode;
 import org.wisdom.tool.model.HttpHist;
 import org.wisdom.tool.model.HttpHists;
@@ -70,7 +72,7 @@ import net.htmlparser.jericho.SourceFormatter;
 * @Author: Yudong (Dom) Wang
 * @Email: wisdomtool@outlook.com 
 * @Date: 2017-07-22 PM 10:42:57 
-* @Version: WisdomTool RESTClient V1.1 
+* @Version: WisdomTool RESTClient V1.2 
 */
 public class RESTUtil
 {
@@ -445,7 +447,7 @@ public class RESTUtil
 
             // Format
             OutputFormat format = OutputFormat.createPrettyPrint();
-            format.setEncoding(Charsets.UTF_8.getCname());
+            format.setEncoding(Charsets.UTF_8.name());
 
             // Writer
             StringWriter sw = new StringWriter();
@@ -1076,4 +1078,67 @@ public class RESTUtil
         return sb.toString();
     }
     
+    /**
+    * 
+    * @Title      : loadHist 
+    * @Description: Load history 
+    * @Param      : @param path if not specified, will use default. 
+    * @Param      : @return 
+    * @Return     : HttpHists
+    * @Throws     :
+     */
+    public static HttpHists loadHist(String path)
+    {
+        File fhist = null;
+        if (StringUtils.isNotEmpty(path))
+        {
+            fhist = new File(path);
+            if (!fhist.exists())
+            {
+                System.out.println("The historical file " + path + " does not exist, will use default " + RESTConst.HTTP_HIST_JSON);
+                fhist = new File(RESTConst.HTTP_HIST_JSON);
+            }
+        }
+        else
+        {
+            fhist = new File(RESTConst.HTTP_HIST_JSON);
+        }
+
+        if (!fhist.exists())
+        {
+            System.out.println("The historical file " + path + " does not exist.");
+            return null;
+        }
+
+        HttpHists hists = RESTUtil.toOject(fhist, HttpHists.class);
+        if (null == hists || CollectionUtils.isEmpty(hists.getHists()))
+        {
+            System.out.println("No historical cases.");
+        }
+        return hists;
+    }
+    
+    /**
+    * 
+    * @Title      : printUsage 
+    * @Description: print usage
+    * @Param      :  
+    * @Return     : void
+    * @Throws     :
+     */
+    public static void printUsage()
+    {
+        try
+        {
+            InputStream is = RESTUtil.getInputStream(RESTConst.WISDOM_TOOL_USAGE);
+            String jsTxt = IOUtils.toString(is, Charsets.UTF_8);
+            RESTUtil.close(is);
+            System.out.println(jsTxt);
+        }
+        catch(Exception e)
+        {
+            log.error("Failed to read help file.", e);
+        }
+
+    }
 }

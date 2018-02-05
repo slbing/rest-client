@@ -18,11 +18,11 @@
         },
         "10004": {
             "message_Zh_CN": "执行用例返回的消息体与之前结果的消息体不一致，请将日志里的返回消息体与历史用例的消息体进行对比。",
-            "message_En_US": "Response body is inconsistent with the previous one. Please compare the response body in log file with the history case."
+            "message_En_US": "Response body is inconsistent with the previous one. Please compare the response body in log file with the historical case."
         },
         "10005": {
             "message_Zh_CN": "执行HTTP请求失败，请将日志里的返回消息内容与历史用例的消息内容进行对比。",
-            "message_En_US": "Failed to execute HTTP request. Please compare the response message in log file with the history case."
+            "message_En_US": "Failed to execute HTTP request. Please compare the response message in log file with the historical case."
         },
         "10006": {
             "message_Zh_CN": "错误的JSON文本。",

@@ -33,6 +33,8 @@ import org.wisdom.tool.model.HttpHist;
 import org.wisdom.tool.model.HttpHists;
 import org.wisdom.tool.model.HttpReq;
 import org.wisdom.tool.model.HttpRsp;
+import org.wisdom.tool.thread.RESTThdPool;
+import org.wisdom.tool.thread.TestThd;
 
 /** 
 * @ClassName: TestUtil 
@@ -40,7 +42,7 @@ import org.wisdom.tool.model.HttpRsp;
 * @Author: Yudong (Dom) Wang
 * @Email: wisdomtool@outlook.com 
 * @Date: 2017-7-17 PM 1:11:29 
-* @Version: WisdomTool RESTClient V1.1 
+* @Version: WisdomTool RESTClient V1.2 
 */
 public final class TestUtil
 {
@@ -165,5 +167,54 @@ public final class TestUtil
         }
 
     }
+    
+    /**
+    * 
+    * @Title      : progress 
+    * @Description: Display progress 
+    * @Param      : @param hists 
+    * @Return     : void
+    * @Throws     :
+     */
+    public static void progress(HttpHists hists)
+    {
+        int done = 0;
+        int preDone = 0;
+        int progress = 0;
 
+        System.out.print(RESTConst.TEST_CASE + ".\r\nCompleted --> ");
+        while (progress < hists.getTotal())
+        {
+            progress = hists.progress();
+            done = Math.min(progress, hists.getTotal()) * 100 / hists.getTotal();
+            if (done != preDone)
+            {
+                System.out.print(done + "%");
+                for (int i = 0; i <= String.valueOf(done).length(); i++)
+                {
+                    System.out.print("\b");
+                }
+            }
+            preDone = done;
+            RESTUtil.sleep(RESTConst.TIME_100MS);
+        }
+        System.out.println("\r\n" + RESTConst.DONE);
+    }
+
+    /**
+    * 
+    * @Title      : apiTest 
+    * @Description: test API 
+    * @Param      : @param hists 
+    * @Return     : void
+    * @Throws     :
+     */
+    public static void apiTest(HttpHists hists)
+    {
+        Thread testThrd = new TestThd(hists);
+        testThrd.setName(RESTConst.TEST_THREAD);
+        RESTThdPool.getInstance().getPool().submit(testThrd);
+        RESTUtil.sleep(RESTConst.TIME_100MS);
+        TestUtil.progress(hists);
+    }
 }

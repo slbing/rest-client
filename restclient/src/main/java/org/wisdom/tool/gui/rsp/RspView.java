@@ -37,7 +37,7 @@ import org.wisdom.tool.model.HttpRsp;
 * @Author: Yudong (Dom) Wang
 * @Email: wisdomtool@outlook.com 
 * @Date: 2017-07-22 PM 10:42:57 
-* @Version: WisdomTool RESTClient V1.1 
+* @Version: WisdomTool RESTClient V1.2 
 */
 public class RspView extends JPanel
 {
@@ -63,6 +63,11 @@ public class RspView extends JPanel
     public JTabbedPane getTabPane()
     {
         return tp;
+    }
+
+    public RspTextPanel getBodyView()
+    {
+        return pnlBody;
     }
 
     /**
@@ -95,8 +100,8 @@ public class RspView extends JPanel
         pnlHdr = new RspTabPanel(RESTConst.HEADER);
         tp.add(RESTConst.HEADER, pnlHdr);
 
-        pnlRaw = new RspTextPanel(RESTConst.RAW_TEXT);
-        tp.add(RESTConst.RAW_TEXT, pnlRaw);
+        pnlRaw = new RspTextPanel(RESTConst.RAW);
+        tp.add(RESTConst.RAW, pnlRaw);
 
         this.add(tp, BorderLayout.CENTER);
         

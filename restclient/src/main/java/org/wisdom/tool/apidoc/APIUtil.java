@@ -47,6 +47,7 @@ import org.wisdom.tool.model.APIReq;
 import org.wisdom.tool.model.APIRsp;
 import org.wisdom.tool.model.APISum;
 import org.wisdom.tool.model.HttpHist;
+import org.wisdom.tool.model.HttpHists;
 import org.wisdom.tool.model.HttpMethod;
 import org.wisdom.tool.util.RESTUtil;
 
@@ -56,7 +57,7 @@ import org.wisdom.tool.util.RESTUtil;
 * @Author: Yudong (Dom) Wang
 * @Email: wisdomtool@outlook.com 
 * @Date: 2017-7-17 PM 1:11:29 
-* @Version: WisdomTool RESTClient V1.1 
+* @Version: WisdomTool RESTClient V1.2 
 */
 public final class APIUtil
 {
@@ -64,13 +65,14 @@ public final class APIUtil
     
     /**
     * 
-    * @Title: getAPIDoc 
-    * @Description: Get API Document Object 
-    * @param @return
-    * @return APIDoc 
-    * @throws
+    * @Title      : getAPIDoc 
+    * @Description: Get API document 
+    * @Param      : @param hists
+    * @Param      : @return 
+    * @Return     : APIDoc
+    * @Throws     :
      */
-    public static synchronized APIDoc getAPIDoc()
+    public static APIDoc getAPIDoc(Collection<HttpHist> hists)
     {
         APIDoc doc = null;
         InputStream is = RESTUtil.getInputStream(RESTConst.APIDOC_JSON);
@@ -82,16 +84,15 @@ public final class APIUtil
             return doc;
         }
 
-        if (MapUtils.isEmpty(RESTCache.getHists()))
+        if (CollectionUtils.isEmpty(hists))
         {
             return doc;
         }
 
         List<APIItem> apiLst = doc.getApiLst();
         apiLst.clear();
-        
+
         Map<String, List<APIRsp>> rsps = new LinkedHashMap<String, List<APIRsp>>();
-        Collection<HttpHist> hists = RESTCache.getHists().values();
         for (HttpHist hist : hists)
         {
             APISum sumry = new APISum(hist.getReq());
@@ -100,7 +101,7 @@ public final class APIUtil
             {
                 rspLst = new ArrayList<APIRsp>();
                 rsps.put(sumry.apiKey(), rspLst);
-                
+
                 APIReq req = new APIReq(hist.getReq());
                 APIItem item = new APIItem(sumry, req, rspLst);
                 apiLst.add(item);
@@ -115,6 +116,21 @@ public final class APIUtil
             sort(item.getRepLst());
         }
 
+        return doc;
+    }
+    
+    /**
+    * 
+    * @Title: getAPIDoc 
+    * @Description: Get API Document Object 
+    * @param @return
+    * @return APIDoc 
+    * @throws
+     */
+    public static synchronized APIDoc getAPIDoc()
+    {
+        Collection<HttpHist> hists = RESTCache.getHists().values();
+        APIDoc doc = getAPIDoc(hists);
         return doc;
     }
     
@@ -431,5 +447,28 @@ public final class APIUtil
 
         rspLst.clear();
         rspLst.addAll(rsps.values());
+    }
+    
+    /**
+    * 
+    * @Title      : loadDoc 
+    * @Description: Load API doc 
+    * @Param      : @param path
+    * @Param      : @return 
+    * @Return     : APIDoc
+    * @Throws     :
+     */
+    public static APIDoc loadDoc(String path)
+    {
+        APIDoc doc = null;
+        HttpHists hists = RESTUtil.loadHist(path);
+        if (null == hists)
+        {
+            doc = getAPIDoc(null);
+            return doc;
+        }
+
+        doc = getAPIDoc(hists.getHists());
+        return doc;
     }
 }

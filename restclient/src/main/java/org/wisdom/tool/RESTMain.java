@@ -16,21 +16,25 @@
 package org.wisdom.tool;
 
 import java.awt.Dimension;
+import java.awt.SplashScreen;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-import java.io.File;
 
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.wisdom.tool.apidoc.APIUtil;
 import org.wisdom.tool.constant.RESTConst;
 import org.wisdom.tool.gui.RESTView;
 import org.wisdom.tool.gui.menu.MenuBarView;
 import org.wisdom.tool.gui.util.UIUtil;
+import org.wisdom.tool.model.APIDoc;
 import org.wisdom.tool.model.HttpHists;
+import org.wisdom.tool.thread.LoadThd;
 import org.wisdom.tool.util.RESTUtil;
+import org.wisdom.tool.util.TestUtil;
 
 /** 
  * @ClassName: RESTMain 
@@ -38,7 +42,7 @@ import org.wisdom.tool.util.RESTUtil;
  * @Author: Yudong (Dom) Wang
  * @Email: wisdomtool@outlook.com 
  * @Date: Jan 20, 2017 12:30:29 PM 
- * @Version: WisdomTool RESTClient V1.1 
+ * @Version: WisdomTool RESTClient V1.2 
  */
 public class RESTMain
 {
@@ -54,23 +58,17 @@ public class RESTMain
 
     /**
     * 
-    * @Title: load 
-    * @Description: Load configurations 
-    * @param
-    * @return void 
-    * @throws
+    * @Title      : load 
+    * @Description: Load configurations through specified file 
+    * @Param      : @param path 
+    * @Return     : void
+    * @Throws     :
      */
-    private static void load()
+    public static void load(String path)
     {
         try
         {
-            File fhist = new File(RESTConst.HTTP_HIST_JSON);
-            if (!fhist.exists())
-            {
-                return;
-            }
-
-            HttpHists hists = RESTUtil.toOject(fhist, HttpHists.class);
+            HttpHists hists = RESTUtil.loadHist(path);
             UIUtil.setRESTView(hists);
         }
         catch(Throwable e)
@@ -87,7 +85,7 @@ public class RESTMain
     * @return void 
     * @throws
      */
-    private static void init()
+    public static void init()
     {
         MenuBarView mbv = new MenuBarView();
         JFrame frame = new JFrame(RESTConst.REST_CLIENT_VERSION);
@@ -104,16 +102,17 @@ public class RESTMain
 
     /**
     * 
-    * @Title: openView 
+    * @Title      : openView 
     * @Description: Open REST view 
-    * @param
-    * @return void 
-    * @throws
+    * @Param      : @param path open view through specified file
+    * @Return     : void
+    * @Throws     :
      */
-    public static void openView()
+    public static void openView(String path)
     {
-        load();
-        init();
+        LoadThd loader = new LoadThd(path);
+        loader.setName(RESTConst.LOAD_THREAD);
+        SwingUtilities.invokeLater(loader);
     }
 
     /**
@@ -130,15 +129,79 @@ public class RESTMain
         System.exit(0);
     }
 
-    public static void main(String[] args)
+    /**
+    * 
+    * @Title      : launch 
+    * @Description: - gui     -- launch GUI
+    *             : - apitest -- test API
+    *             : - apidoc  -- create API doc
+    *             : - help    -- display help
+    * @Param      : @param actions
+    * @Return     : void
+    * @Throws     :
+     */
+    public static void launch(String[] actions)
     {
-        SwingUtilities.invokeLater(new Runnable()
+        if (null == actions || actions.length < 1)
         {
-            public void run()
-            {
-                RESTMain.openView();
-            }
-        });
+            openView(RESTConst.EMPTY);
+            return;
+        }
+
+        SplashScreen ss = SplashScreen.getSplashScreen();
+        if (null != ss)
+        {
+            ss.close();
+        }
+
+        String path = RESTConst.EMPTY;
+        if (actions.length > 1)
+        {
+            path = actions[1];
+        }
+
+        if (RESTConst.OPTION_HELP.equalsIgnoreCase(actions[0]))
+        {
+            RESTUtil.printUsage();
+            System.exit(0);
+        }
+        else if (RESTConst.OPTION_DOC.equalsIgnoreCase(actions[0]))
+        {
+            APIDoc doc = APIUtil.loadDoc(path);
+            APIUtil.apiDoc(doc);
+            System.out.println("See 'work/apidoc/apidoc.html' for the API documentation.");
+            System.exit(0);
+        }
+        else if (RESTConst.OPTION_TEST.equalsIgnoreCase(actions[0]))
+        {
+            HttpHists hists = RESTUtil.loadHist(path);
+            TestUtil.apiTest(hists);
+            System.out.println("See 'work/report/report.html' for the test report.");
+            System.exit(0);
+        }
+        else if (RESTConst.OPTION_GUI.equalsIgnoreCase(actions[0]))
+        {
+            openView(path);
+        }
+        else
+        {
+            RESTUtil.printUsage();
+            System.exit(0);
+        }
+    }
+    
+    /**
+    * 
+    * @Title      : main 
+    * @Description: REST Main
+    *             : 
+    * @Param      : @param args 
+    * @Return     : void
+    * @Throws     :
+     */
+    public static void main(String[] args)
+    {        
+        RESTMain.launch(args);
     }
 
 }

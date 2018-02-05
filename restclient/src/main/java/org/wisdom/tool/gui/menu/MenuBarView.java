@@ -49,7 +49,7 @@ import org.wisdom.tool.gui.util.UIUtil;
 import org.wisdom.tool.model.APIDoc;
 import org.wisdom.tool.model.HttpHists;
 import org.wisdom.tool.thread.RESTThdPool;
-import org.wisdom.tool.thread.TestThrd;
+import org.wisdom.tool.thread.TestThd;
 import org.wisdom.tool.util.RESTUtil;
 import org.wisdom.tool.util.TestUtil;
 
@@ -59,7 +59,7 @@ import org.wisdom.tool.util.TestUtil;
  * @Author: Yudong (Dom) Wang
  * @Email: wisdomtool@outlook.com 
  * @Date: Jan 20, 2017 12:30:29 PM 
- * @Version: WisdomTool RESTClient V1.1 
+ * @Version: WisdomTool RESTClient V1.2 
  */
 public class MenuBarView implements ActionListener, PropertyChangeListener
 {
@@ -77,7 +77,7 @@ public class MenuBarView implements ActionListener, PropertyChangeListener
 
     private HistTask task = null;
 
-    private TestThrd testThrd = null;
+    private TestThd testThrd = null;
 
     private DonateDialog dd = null;
 
@@ -96,13 +96,15 @@ public class MenuBarView implements ActionListener, PropertyChangeListener
         @Override
         public Void doInBackground()
         {
+            int done = 0;
             int progress = 0;
             this.setProgress(0);
             while (progress < hists.getTotal() && !isCancelled())
             {
                 progress = hists.progress();
+                done = Math.min(progress, hists.getTotal()) * 100 / hists.getTotal();
+                this.setProgress(done);
                 RESTUtil.sleep(RESTConst.TIME_100MS);
-                this.setProgress(Math.min(progress, hists.getTotal()));
             }
             return null;
         }
@@ -136,6 +138,7 @@ public class MenuBarView implements ActionListener, PropertyChangeListener
         JMenu mnEdit = new JMenu(RESTConst.EDIT);
         JMenu mnTest = new JMenu(RESTConst.TEST);
         JMenu mnDoc = new JMenu(StringUtils.capitalize(RESTConst.APIDOC));
+        //JMenu mnTool = new JMenu(RESTConst.TOOLS);
         JMenu mnHelp = new JMenu(RESTConst.HELP);
 
         // Menu of file
@@ -238,6 +241,7 @@ public class MenuBarView implements ActionListener, PropertyChangeListener
         mb.add(mnEdit);
         mb.add(mnTest);
         mb.add(mnDoc);
+        // mb.add(mnTool);
         mb.add(mnHelp);
         fc = new JFileChooser();
     }
@@ -351,7 +355,7 @@ public class MenuBarView implements ActionListener, PropertyChangeListener
             task.addPropertyChangeListener(this);
             task.execute();
 
-            testThrd = new TestThrd(hists);
+            testThrd = new TestThd(hists);
             testThrd.setName(RESTConst.TEST_THREAD);
             RESTThdPool.getInstance().getPool().submit(testThrd);
         }

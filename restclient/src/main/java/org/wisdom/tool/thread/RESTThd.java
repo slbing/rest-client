@@ -15,6 +15,7 @@
  */
 package org.wisdom.tool.thread;
 
+import org.apache.commons.lang.StringUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.wisdom.tool.constant.RESTConst;
@@ -29,7 +30,7 @@ import org.wisdom.tool.util.RESTClient;
 * @Author: Yudong (Dom) Wang
 * @Email: wisdomtool@outlook.com 
 * @Date: 2017-07-18 PM 9:41:08 
-* @Version: WisdomTool RESTClient V1.1 
+* @Version: WisdomTool RESTClient V1.2 
 */
 public class RESTThd extends Thread
 {
@@ -60,7 +61,16 @@ public class RESTThd extends Thread
         rv.getProgressBar().setVisible(false);
         rv.getProgressBar().setIndeterminate(false);
 
+        String body = RESTView.getView().getRspView().getBodyView().getTxtAra().getText();
         RESTView.getView().getTabPane().setSelectedIndex(1);
-        RESTView.getView().getRspView().getTabPane().setSelectedIndex(2);
+        if (StringUtils.isNotEmpty(body))
+        {
+            RESTView.getView().getRspView().getTabPane().setSelectedIndex(0);
+        }
+        else
+        {
+            RESTView.getView().getRspView().getTabPane().setSelectedIndex(2);
+        }
+
     }
 }

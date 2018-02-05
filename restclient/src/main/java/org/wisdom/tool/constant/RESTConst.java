@@ -21,11 +21,11 @@ package org.wisdom.tool.constant;
 * @Author: Yudong (Dom) Wang
 * @Email: wisdomtool@outlook.com 
 * @Date: 2017-07-22 PM 10:42:57 
-* @Version: WisdomTool RESTClient V1.1 
+* @Version: WisdomTool RESTClient V1.2 
 */
 public class RESTConst
 {
-    public static final String REST_CLIENT_VERSION = "WisdomTool.org REST Client V1.1";
+    public static final String REST_CLIENT_VERSION = "WisdomTool.org RESTClient V1.2";
 
     public static final String WORK = "work";
 
@@ -60,6 +60,8 @@ public class RESTConst
     public final static String WISDOM_TOOL_ORG = WISDOM_TOOL + "help/wisdomtool.org";
 
     public final static String DONATION = WISDOM_TOOL + "help/wisdomtool.donate";
+
+    public final static String WISDOM_TOOL_USAGE = WISDOM_TOOL + "help/wisdomtool.cli.usage";
 
     public static final String LOGO = WISDOM_TOOL + "image/logo.png";
 
@@ -115,7 +117,7 @@ public class RESTConst
 
     public static final String BODY = "Body";
 
-    public static final String RAW_TEXT = "Raw Text";
+    public static final String RAW = "Raw";
 
     public static final String STATUS = "Status";
 
@@ -145,7 +147,7 @@ public class RESTConst
 
     public static final String HTTP_RESPONSE = "HTTP Response";
 
-    public static final String REST_CLIENT = "HTTP REST Client";
+    public static final String REST_CLIENT = "HTTP RESTClient";
 
     public static final String HTTP_HISTORY = "HTTP History";
 
@@ -201,6 +203,8 @@ public class RESTConst
 
     public static final String HELP = "Help";
 
+    public static final String TOOLS = "Tools";
+    
     public static final String CREATE = "Create";
 
     public static final String OPEN = "Open";
@@ -266,15 +270,19 @@ public class RESTConst
     public final static Long TIME_3S = 3000L;
 
     public final static Long TIME_100MS = 100L;
+    
+    public final static Long TIME_300MS = 300L;
 
     public final static String DEFAULT_HOST = "127.0.0.1";
 
     public final static String PROGRESS = "progress";
 
-    public final static String TEST_CASE = "Testing History Cases";
+    public final static String TEST_CASE = "Testing historical cases";
 
     public final static String TEST_THREAD = "Test Thread";
 
+    public final static String LOAD_THREAD = "Load Thread";
+    
     public final static String REQ_THREAD = "Request Thread";
 
     public final static String TLS = "TLS";
@@ -316,4 +324,18 @@ public class RESTConst
     public static final String MOVE_UP = "Move Up";
 
     public static final String MOVE_DOWN = "Move Down";
+
+    public static final String APITEST = "apitest";
+
+    public static final String OPTION_TEST = "-" + APITEST;
+
+    public static final String OPTION_DOC = "-" + APIDOC;
+
+    public static final String OPTION_HELP = "-help";
+    
+    public static final String OPTION_GUI = "-gui";
+
+    public static final String EMPTY = "";
+
+    public static final String DONE = "Done";
 }
