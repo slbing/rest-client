@@ -387,7 +387,9 @@ public class MenuBarView implements ActionListener, PropertyChangeListener
 
         if (RESTConst.TEST_REPORT.equals(item.getText()))
         {
-            TestUtil.open(RESTConst.REPORT_HTML);
+            TestUtil.open(RESTConst.REPORT_HTML, 
+                          RESTConst.MSG_REPORT, 
+                          RESTConst.TEST_REPORT);
         }
 
     }
@@ -411,7 +413,9 @@ public class MenuBarView implements ActionListener, PropertyChangeListener
 
         if (RESTConst.OPEN.equals(item.getText()))
         {
-            TestUtil.open(RESTConst.APIDOC_HTML);
+            TestUtil.open(RESTConst.APIDOC_HTML, 
+                          RESTConst.MSG_APIDOC, 
+                          RESTConst.API_DOCUMENT);
         }
     }
     
@@ -451,7 +455,14 @@ public class MenuBarView implements ActionListener, PropertyChangeListener
                 }
                 FileUtils.copyInputStreamToFile(is, new File(path));
                 RESTUtil.close(is);
-                Desktop.getDesktop().open(new File(path));
+                try
+                {
+                    Desktop.getDesktop().open(new File(path));
+                }
+                catch(Exception e)
+                {
+                    UIUtil.showMessage(RESTConst.MSG_HELP_FILE, RESTConst.HELP_CONTENTS);
+                }
             }
             catch(IOException e)
             {
@@ -468,9 +479,8 @@ public class MenuBarView implements ActionListener, PropertyChangeListener
             }
             catch(Exception e)
             {
-                log.error("Failed to open report issue site.", e);
+                UIUtil.showMessage(RESTConst.MSG_REPORT_ISSUE, RESTConst.REPORT_ISSUE);;
             }
-
         }
     }
     public void actionPerformed(ActionEvent e)

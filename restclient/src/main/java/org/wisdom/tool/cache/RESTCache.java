@@ -31,7 +31,7 @@ import org.wisdom.tool.util.RESTUtil;
 * @Author: Yudong (Dom) Wang
 * @Email: wisdomtool@outlook.com
 * @Date: 2017-07-27 PM 5:01:37 
-* @Version: WisdomTool RESTClient V1.1 
+* @Version: WisdomTool RESTClient V1.2 
 */
 public class RESTCache
 {
@@ -44,7 +44,22 @@ public class RESTCache
      * Test cause
      */
     private static Causes cs = null;
-    
+
+    /**
+     * If it's CLI running
+     */
+    private static boolean isCLIRunning;
+
+    public static boolean isCLIRunning()
+    {
+        return isCLIRunning;
+    }
+
+    public static void setCLIRunning(boolean isCLIRunning)
+    {
+        RESTCache.isCLIRunning = isCLIRunning;
+    }
+
     public static Map<String, HttpHist> getHists()
     {
         return hists;

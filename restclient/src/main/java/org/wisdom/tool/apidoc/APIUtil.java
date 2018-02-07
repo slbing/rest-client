@@ -41,6 +41,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.wisdom.tool.cache.RESTCache;
 import org.wisdom.tool.constant.RESTConst;
+import org.wisdom.tool.gui.util.UIUtil;
 import org.wisdom.tool.model.APIDoc;
 import org.wisdom.tool.model.APIItem;
 import org.wisdom.tool.model.APIReq;
@@ -188,8 +189,16 @@ public final class APIUtil
             FileUtils.copyInputStreamToFile(is, new File(logoPath));
             RESTUtil.close(is);
 
-            // Open API document
-            Desktop.getDesktop().open(new File(RESTUtil.replacePath(RESTConst.APIDOC_HTML)));
+            try
+            {
+                // Open API document
+                Desktop.getDesktop().open(new File(RESTUtil.replacePath(RESTConst.APIDOC_HTML)));
+            }
+            catch(Exception e)
+            {
+                UIUtil.showMessage(RESTConst.MSG_APIDOC, RESTConst.API_DOCUMENT);
+            }
+
         }
         catch(Throwable e)
         {

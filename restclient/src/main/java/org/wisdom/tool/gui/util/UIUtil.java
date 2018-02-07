@@ -33,6 +33,7 @@ import java.util.Map.Entry;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.TableColumn;
 import javax.swing.table.TableColumnModel;
@@ -65,7 +66,7 @@ import org.wisdom.tool.util.RESTUtil;
 * @Author: Yudong (Dom) Wang
 * @Email: wisdomtool@outlook.com
 * @Date: July 20, 2017 12:30:29 PM 
-* @Version: WisdomTool RESTClient V1.1 
+* @Version: WisdomTool RESTClient V1.2 
 */
 public class UIUtil
 {
@@ -579,6 +580,26 @@ public class UIUtil
 
             RESTCache.getHists().put(key, e.getValue());
             i++;
+        }
+    }
+    
+    /**
+    * @Title      : showMessage 
+    * @Description: If it is not CLI running, 
+    *             : require a message dialog to tell user where is the file.
+    * @Param      : @param msg
+    * @Param      : @param title 
+    * @Return     : void
+    * @Throws     :
+     */
+    public static void showMessage(final String msg, final String title)
+    {
+        if (!RESTCache.isCLIRunning())
+        {
+            JOptionPane.showMessageDialog(RESTView.getView(), 
+                                          msg, 
+                                          title, 
+                                          JOptionPane.INFORMATION_MESSAGE);
         }
     }
 }

@@ -28,6 +28,7 @@ import org.apache.commons.lang.StringUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.wisdom.tool.constant.RESTConst;
+import org.wisdom.tool.gui.util.UIUtil;
 import org.wisdom.tool.model.ErrCode;
 import org.wisdom.tool.model.HttpHist;
 import org.wisdom.tool.model.HttpHists;
@@ -132,8 +133,16 @@ public final class TestUtil
             FileUtils.copyInputStreamToFile(is, new File(logoPath));
             RESTUtil.close(is);
 
-            // Open test report
-            Desktop.getDesktop().open(new File(RESTUtil.replacePath(RESTConst.REPORT_HTML)));
+            try
+            {
+                // Open test report
+                Desktop.getDesktop().open(new File(RESTUtil.replacePath(RESTConst.REPORT_HTML)));
+            }
+            catch(Exception e)
+            {
+                UIUtil.showMessage(RESTConst.MSG_REPORT, RESTConst.TEST_REPORT);
+            }
+
         }
         catch(Throwable e)
         {
@@ -144,28 +153,30 @@ public final class TestUtil
     
     /**
     * 
-    * @Title: open 
+    * @Title      : open 
     * @Description: Open test report 
-    * @param  path
-    * @return void
-    * @throws
+    * @Param      : @param path
+    * @Param      : @param msg
+    * @Param      : @param title 
+    * @Return     : void
+    * @Throws     :
      */
-    public static void open(String path)
+    public static void open(String path, final String msg, final String title)
     {
+        File rf = new File(RESTUtil.replacePath(path));
+        if (!rf.exists())
+        {
+            return;
+        }
+
         try
         {
-            File rf = new File(RESTUtil.replacePath(path));
-            if (!rf.exists())
-            {
-                return;
-            }
             Desktop.getDesktop().open(rf);
         }
         catch(Exception e)
         {
-            log.error("Failed to open test report.", e);
+            UIUtil.showMessage(msg, title);
         }
-
     }
     
     /**

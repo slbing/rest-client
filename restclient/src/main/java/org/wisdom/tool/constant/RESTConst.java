@@ -215,7 +215,7 @@ public class RESTConst
 
     public static final String ABOUT_TOOL = "About Tool";
 
-    public static final String API_DOCUMENT = "API document";
+    public static final String API_DOCUMENT = "API Documentation";
 
     public static final String REQ_TAG = "== REQUEST  ==";
 
@@ -338,4 +338,18 @@ public class RESTConst
     public static final String EMPTY = "";
 
     public static final String DONE = "Done";
+
+    public static final String PAGE_APIDOC = "work/apidoc/apidoc.html";
+
+    public static final String PAGE_REPORT = "work/report/report.html";
+
+    public static final String HELP_FILE = "work/doc/rest-client.pdf";
+
+    public static final String MSG_APIDOC = "Please see \"" + RESTConst.PAGE_APIDOC + "\" for the API documentation.";
+
+    public static final String MSG_REPORT = "Please see \"" + RESTConst.PAGE_REPORT + "\" for the test report.";
+
+    public static final String MSG_REPORT_ISSUE = "Please visit\n\"" + RESTConst.URL_ISSUE + "\"\nto report issue.";
+
+    public static final String MSG_HELP_FILE = "Please see \"" + RESTConst.HELP_FILE + "\" for the help contents.";
 }

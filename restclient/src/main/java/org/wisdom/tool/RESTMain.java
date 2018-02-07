@@ -16,7 +16,6 @@
 package org.wisdom.tool;
 
 import java.awt.Dimension;
-import java.awt.SplashScreen;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
@@ -26,6 +25,7 @@ import javax.swing.SwingUtilities;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.wisdom.tool.apidoc.APIUtil;
+import org.wisdom.tool.cache.RESTCache;
 import org.wisdom.tool.constant.RESTConst;
 import org.wisdom.tool.gui.RESTView;
 import org.wisdom.tool.gui.menu.MenuBarView;
@@ -110,6 +110,7 @@ public class RESTMain
      */
     public static void openView(String path)
     {
+        RESTCache.setCLIRunning(false);
         LoadThd loader = new LoadThd(path);
         loader.setName(RESTConst.LOAD_THREAD);
         SwingUtilities.invokeLater(loader);
@@ -148,12 +149,7 @@ public class RESTMain
             return;
         }
 
-        SplashScreen ss = SplashScreen.getSplashScreen();
-        if (null != ss)
-        {
-            ss.close();
-        }
-
+        RESTUtil.closeSplashScreen();
         String path = RESTConst.EMPTY;
         if (actions.length > 1)
         {
@@ -167,16 +163,18 @@ public class RESTMain
         }
         else if (RESTConst.OPTION_DOC.equalsIgnoreCase(actions[0]))
         {
+            RESTCache.setCLIRunning(true);
             APIDoc doc = APIUtil.loadDoc(path);
             APIUtil.apiDoc(doc);
-            System.out.println("See 'work/apidoc/apidoc.html' for the API documentation.");
+            System.out.println(RESTConst.MSG_APIDOC);
             System.exit(0);
         }
         else if (RESTConst.OPTION_TEST.equalsIgnoreCase(actions[0]))
         {
+            RESTCache.setCLIRunning(true);
             HttpHists hists = RESTUtil.loadHist(path);
             TestUtil.apiTest(hists);
-            System.out.println("See 'work/report/report.html' for the test report.");
+            System.out.println(RESTConst.MSG_REPORT);
             System.exit(0);
         }
         else if (RESTConst.OPTION_GUI.equalsIgnoreCase(actions[0]))

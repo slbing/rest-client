@@ -15,6 +15,7 @@
  */
 package org.wisdom.tool.util;
 
+import java.awt.SplashScreen;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
@@ -1139,6 +1140,30 @@ public class RESTUtil
         {
             log.error("Failed to read help file.", e);
         }
-
+    }
+    
+    /**
+    * 
+    * @Title      : closeSplashScreen 
+    * @Description: close splash screen 
+    * @Param      :  
+    * @Return     : void
+    * @Throws     :
+     */
+    public static void closeSplashScreen()
+    {
+        SplashScreen ss = SplashScreen.getSplashScreen();
+        if (null == ss)
+        {
+            return;
+        }
+        try
+        {
+            ss.close();
+        }
+        catch(Exception e)
+        {
+            // Ignore this exception
+        }
     }
 }
